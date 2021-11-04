@@ -1,0 +1,99 @@
+/* Common */
+:root {
+  /* colors */
+  --font-color: rgba(255, 255, 255, 0.4);
+  --a-color: rgba(255, 255, 255, 0.4);
+  --a-hover-color: rgba(255, 255, 255, 1);
+  --a-active-underline-color: greenyellow;
+  --main-bg-color: rgb(20, 25, 34);
+  --call-to-action-bg-color: rgba(0, 0, 0, 0.4);
+  /* sizes */
+  --main-nav-md-width-large: 230px;
+  --main-nav-xs-width-large: 50px;
+  --main-nav-min-height: 480px;
+  --nav-bottom-height: 80px;
+  --call-to-action-height: 90px;
+  --footer-height: 90px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--font-color);
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  overflow: hidden;
+}
+
+main {
+  width: 100%;
+  height: calc(100% - var(--footer-height));
+  background-color: blueviolet;
+   overflow: hidden;
+}
+.main-nav {
+  float: left;
+  width: var(--main-nav-md-width-large);
+  height: 100%;
+  min-height: var(--main-nav-min-height);
+  background-color: coral;
+}
+.main-nav-top {
+  width: 100%;
+  height: calc(100% - var(--nav-bottom-height));
+  background-color: darkred;
+}
+.main-nav-bottom {
+  width: 100%;
+  height: var(--nav-bottom-height);
+  background-color: darkviolet;
+}
+.main-content {
+  float: left;
+  width: calc(100% - var(--main-nav-md-width-large));
+  height: 100%;
+  padding-top: calc(var(--call-to-action-height) + 2em);
+  padding-bottom: 2em;
+  background-color: darkcyan;
+  overflow: auto;
+}
+.main-call-to-action {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc( 100% - var(--main-nav-md-width-large));
+  height: var(--call-to-action-height);
+  background-color: var(--call-to-action-bg-color);
+}
+@media screen and (max-width: 600px) {
+  .main-nav {
+    width: var(--main-nav-xs-width-large);
+  }
+  .main-content {
+    width: calc(100% - var(--main-nav-xs-width-large));
+  }
+  .main-call-to-action {
+  width: calc( 100% - var(--main-nav-xs-width-large));
+  }
+}
+footer {
+  width: 100%;
+  height: var(--footer-height);
+  background-color: yellow;
+}
